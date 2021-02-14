@@ -1,6 +1,7 @@
 import React from 'react'
-import './sass/main.sass'
-import { Layout, Button } from 'antd'
+import '../sass/main.sass'
+import { Layout } from 'antd'
+import NoteRouter from '../components/NoteRouter'
 
 const { Content, Header, Sider, Footer } = Layout;
 
@@ -54,7 +55,7 @@ export default function ContentContainer() {
 
                 <Content className='content-area'>
                     <div className='raw'>
-                        HTML here
+                        <NoteRouter />
                     </div>
                 </Content>
 

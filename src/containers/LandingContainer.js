@@ -1,6 +1,6 @@
 import { Layout, Button } from 'antd'
 import React from 'react'
-import './sass/main.sass'
+import '../sass/main.sass'
 
 const { Content } = Layout;
 
@@ -21,8 +21,8 @@ export default function LandingContainer() {
                         <strong>La peggiore guida noob-friendly sull’odissea verso il 18</strong> non è mai stata così interattiva e aggiornata!<br />
                         Dozzine di cinesi sono stati ingaggiati per produrre <strong>appunti all’avanguardia
                         per i corsi del secondo semestre</strong>, propro quelli che stai seguendo!<br /> 
-                        Lascia perdere la sveglia alle 9, il caffè delle 9:15, 9:30, 10:00, 11:00 e via dicendo,
-                        <strong>adesso puoi dedicarti completamente al fancazzismo</strong>, <br />con minime (<em>sic</em>) ripercussioni!        
+                        Lascia perdere la sveglia alle 9, il caffè delle 9:15, 9:30, 10:00, 11:00 e via dicendo, 
+                        <strong> adesso puoi dedicarti completamente al fancazzismo</strong>, <br />con minime (<em>sic</em>) ripercussioni!        
                     </p>
 
                     <div className="buttons">
