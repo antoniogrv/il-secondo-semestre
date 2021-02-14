@@ -26,22 +26,22 @@ export default function LandingContainer() {
                     </p>
 
                     <div className="buttons">
-                        <a href="/">
+                        <a href="/notes">
                             <div className="subject-button">
                                 Algoritmi
                             </div>
                         </a>
-                        <a href="/">
+                        <a href="/notes">
                             <div className="subject-button">
                                 Reti
                             </div>
                         </a>
-                        <a href="/">
+                        <a href="/notes">
                             <div className="subject-button">
                                 Statistica
                             </div>
                         </a>
-                        <a href="/">
+                        <a href="/notes">
                             <div className="subject-button">
                                 TSW
                             </div>
