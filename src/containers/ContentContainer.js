@@ -1,11 +1,12 @@
 import React from 'react'
 import './sass/main.sass'
-import { Layout } from 'antd'
+import { Layout, Button } from 'antd'
 
 const { Content, Header, Sider, Footer } = Layout;
 
 export default function ContentContainer() {
     return (
+        
         <Layout className='content-layout' hasSider>
             <Sider className='content-sider'>
                 <h1>

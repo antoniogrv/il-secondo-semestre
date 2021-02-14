@@ -1,6 +1,9 @@
+@import "~antd/dist/antd.css";
+
 $base-color: #FF8181
 $link-color: #9B2146
 $link-hover-color: #B4375D
+$header-n-footer-color: #F7F7F7
 
 html, body, #root
     font-family: 'Open Sans', sans-serif
@@ -8,6 +11,7 @@ html, body, #root
     margin: 0
     width: 100%
     height: 100%
+    transition: 0 !important
 
     a
         text-decoration: none
@@ -47,12 +51,14 @@ html, body, #root
     text-align: center
     font-size: 17.5px
 
-    .landing-page-content  
+    .landing-page-content 
+        background: $base-color
 
         h1 
             font-size: 55px
             font-weight: 900
             margin: 0
+            color: white
 
         .tagline
             padding: 0
@@ -144,16 +150,13 @@ html, body, #root
                 padding: 2px
 
     .content-header
-        background: grey
-        width: 100%
-        height: 100px
+        background: $header-n-footer-color
 
     .content-area
         background: white
-
+        
         .raw
-            padding: 10px
+            padding: 20px
 
     .content-footer
-        background: black
-        
+        background: $header-n-footer-color
