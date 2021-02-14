@@ -22,14 +22,14 @@ export default function ContentContainer() {
                     </div>
 
                     <div className='subject-note'>
-                        <a href='/'>01. Argomento 1</a>
+                        <a href='notes/a/1'>01. Argomento 1</a>
                     </div>
 
                     <div className='subject-note'>
-                        <a href='/'>02. Argomento 2</a>
+                        <a href='./a/2'>02. Argomento 2</a>
                     </div>
                     <div className='subject-note'>
-                        <a href='/'>03. Argomento 3</a>
+                        <a href='./a/3'>03. Argomento 3</a>
                     </div>
                 </div>
 
@@ -39,18 +39,18 @@ export default function ContentContainer() {
                     </div>
 
                     <div className='subject-note'>
-                        <a href='/'>01. Argomento 1</a>
+                        <a href='/s/1'>01. Argomento 1</a>
                     </div>
                     
                     <div className='subject-note'>
-                        <a href='/'>02. Argomento 2</a>
+                        <a href='/s/2'>02. Argomento 2</a>
                     </div>
                 </div>
             </Sider>
 
             <Layout>
                 <Header className='content-header'>
-                    Header
+                    
                 </Header>
 
                 <Content className='content-area'>

@@ -6,7 +6,7 @@ export default function DefaultContainer() {
         <div className='default-page'>
             Questa pagina non esiste.<br />
             <div>
-                <strong>Codice errore:</strong> <span className="error-message">@Routing_01</span>
+                <strong>Errore:</strong> <span className="error-message">@JSX Routing</span>
             </div>
         </div>
     )
