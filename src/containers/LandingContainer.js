@@ -1,6 +1,6 @@
+import { Layout, Button } from 'antd'
 import React from 'react'
 import './sass/main.sass'
-import { Layout } from 'antd'
 
 const { Content } = Layout;
 
@@ -24,6 +24,29 @@ export default function LandingContainer() {
                         Lascia perdere la sveglia alle 9, il caffè delle 9:15, 9:30, 10:00, 11:00 e via dicendo,
                         <strong>adesso puoi dedicarti completamente al fancazzismo</strong>, <br />con minime (<em>sic</em>) ripercussioni!        
                     </p>
+
+                    <div className="buttons">
+                        <a href="/">
+                            <div className="subject-button">
+                                Algoritmi
+                            </div>
+                        </a>
+                        <a href="/">
+                            <div className="subject-button">
+                                Reti
+                            </div>
+                        </a>
+                        <a href="/">
+                            <div className="subject-button">
+                                Statistica
+                            </div>
+                        </a>
+                        <a href="/">
+                            <div className="subject-button">
+                                TSW
+                            </div>
+                        </a>
+                    </div>
 
                     <p className="banter">
                         <strong>Non ti senti ispirato?</strong> <a target="_blank" href="https://web.unisa.it/uploads/rescue/233/14/domanda_di_rinuncia_agli_studi_2.3_2018.pdf">Scarica la rinuncia agli studi.</a><br />
