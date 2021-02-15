@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import '../sass/main.sass'
 import { Layout } from 'antd'
 import { Switch, Route } from 'react-router-dom'
@@ -7,36 +7,37 @@ import NoteRouter from '../components/NoteRouter'
 const { Content, Header, Sider, Footer } = Layout;
 
 export default function ContentContainer() {
-    var notes = [];
+    const [notes, setNotes] = useState({});
 
-    const [routes, setRoutes] = useState(false);
+    useEffect(() => {
+        async function fetchData() {
+            var fixedNotes = [];
 
-    async function fetchData() { 
-        console.log('dentro');
-        const response = await fetch('/');
-        const phantomJSX = response.text();
-        const parser = document.createElement('html');
+            const response = await fetch('/');
 
-        parser.innerHTML = phantomJSX;
-        const scraped = parser.getElementsByTagName('Note');
+            const parser = document.createElement('html');
+            parser.innerHTML = await response.text();
+            const scraped = parser.getElementsByTagName('Note');
 
-        for(let i = 0; i < scraped.length; i++) {
-            let str = scraped[i].outerText;
+            for(let i = 0; i < scraped.length; i++) {
+                let str = scraped[i].outerText;
 
-            let id = str.split('-')[1].split('.')[0];
-            let subject = str.split('-')[0];
-            let url = '../static/raw-notes/' + str;
+                let id = str.split('-')[1].split('.')[0];
+                let subject = str.split('-')[0];
+                let url = '../static/raw-notes/' + str;
 
-            notes[i] = {
-                id: id,
-                subject: subject,
-                url: url
+                fixedNotes[i] = {
+                    id: id,
+                    subject: subject,
+                    url: url
+                }
             }
-        }
-        setRoutes(true);
-    }
 
-    fetchData();
+            setNotes(fixedNotes);
+        }
+
+        fetchData();
+    }, []);
 
     return (
         <Layout className='content-layout' hasSider>
@@ -86,7 +87,7 @@ export default function ContentContainer() {
 
                 <Content className='content-area'>
                     <div className='raw'>
-                        { routes ? (
+                        { notes.length ? (
                             <NoteRouter notes={notes} />
                         ) : (
                             'Loading'
