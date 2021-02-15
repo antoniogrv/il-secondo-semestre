@@ -24,12 +24,10 @@ export default function ContentContainer() {
 
                 let id = str.split('-')[1].split('.')[0];
                 let subject = str.split('-')[0];
-                let url = '../static/raw-notes/' + str;
 
                 fixedNotes[i] = {
                     id: id,
-                    subject: subject,
-                    url: url
+                    subject: subject
                 }
             }
 
