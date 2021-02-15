@@ -5,6 +5,15 @@ import '../sass/main.sass'
 const { Content } = Layout;
 
 export default function LandingContainer() {
+    
+    const fs = require('fs');
+
+    fs.readdir('.', (err, files) => {
+        files.forEach(file => {
+            console.log(file);
+        });
+    });
+
     return (
         <div className="landing-page">
             <Layout>
