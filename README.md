@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# il-secondo-semestre
 
 Questa webapp è stata sviluppata al fine di **collezionare in modo ordinato gli appunti personali** relativi, in particolare, alle lezioni del secondo semestre del secondo anno del corso di laurea in Informatica dell'Università di Salerno. Le informazioni contenute sulle pagine del sito non sono da ritenersi affidabili, valide o approvate dai docenti. L'applicativo è stato creato per puro scopo didattico e per intrattenimento.
 
