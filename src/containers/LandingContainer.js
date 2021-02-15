@@ -4,14 +4,47 @@ import '../sass/main.sass'
 
 const { Content } = Layout;
 
-export default function LandingContainer() {
-    
-    const fs = require('fs');
+class Note {
+    constructor() {
+        this.state = {
+            id: null,
+            subject: null,
+            url: '/'
+        }
+    }
+}
 
-    fs.readdir('.', (err, files) => {
-        files.forEach(file => {
-            console.log(file);
-        });
+export default function LandingContainer() {
+    var notes = [];
+
+    async function fetchData() { 
+        const response = await fetch('/');
+        const phantomJSX = await response.text();
+        const parser = document.createElement('html');
+
+        parser.innerHTML = phantomJSX;
+        const scraped = parser.getElementsByTagName('Note');
+
+        for(let i = 0; i < scraped.length; i++) {
+            let str = scraped[i].outerText;
+
+            let id = str.split('-')[1].split('.')[0];
+            let subject = str.split('-')[0];
+            let url = '/static/raw-notes/' + str;
+
+            notes[i] = {
+                id: id,
+                subject: subject,
+                url: url
+            }
+        }  
+    }
+
+    fetchData().then(() => {
+        console.log(notes.length); 
+        for(let i = 0; i < notes.length; i++) {
+            console.log(notes[i]);
+        }
     });
 
     return (
