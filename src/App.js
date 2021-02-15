@@ -9,9 +9,9 @@ function App() {
     return (
         <BrowserRouter>
             <Switch>
-                <Route exact path="/" component={LandingContainer} />
+                <Route exact path="/il-secondo-semestre/" component={LandingContainer} />
                     
-                <Route path="/notes" component={ContentContainer} />
+                <Route exact path="/il-secondo-semestre/notes" component={ContentContainer} />
 
                 <Route render={() => <FailureHandler error='@JSX_AppRouting' />} />
             </Switch>

@@ -35,32 +35,15 @@ export default function LandingContainer() {
                         <strong> adesso puoi dedicarti completamente al fancazzismo</strong>, <br />con minime (<em>sic</em>) ripercussioni!        
                     </p>
 
-                    <div className="buttons">
-                        <a href="/notes">
-                            <div className="subject-button">
-                                Algoritmi
-                            </div>
-                        </a>
-                        <a href="/notes">
-                            <div className="subject-button">
-                                Reti
-                            </div>
-                        </a>
-                        <a href="/notes">
-                            <div className="subject-button">
-                                Statistica
-                            </div>
-                        </a>
-                        <a href="/notes">
-                            <div className="subject-button">
-                                TSW
-                            </div>
-                        </a>
-                    </div>
-
                     <p className="banter">
                         <strong>Non ti senti ispirato?</strong> <a target="_blank" href="https://web.unisa.it/uploads/rescue/233/14/domanda_di_rinuncia_agli_studi_2.3_2018.pdf">Scarica la rinuncia agli studi.</a><br />
                         <strong>Interessato al codice?</strong> Dai un’occhiata a <a target="_blank" href="https://github.com/v1enna/il-secondo-semestre">il-secondo-semestre@v1enna</a>
+                    </p>
+
+                    <p>
+                        <a href='/il-secondo-semestre/notes'>
+                            Notes
+                        </a>
                     </p>
                 </Content>
             </Layout>
