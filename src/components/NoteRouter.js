@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Switch, Route } from 'react-router-dom'
+import DefaultContainer from '../containers/DefaultContainer'
 import '../sass/main.sass'
 
 export default function NoteRouter() {
@@ -7,12 +8,16 @@ export default function NoteRouter() {
 
     return (
         <Switch>
-            <Route path='/notes/a/1'>
-                404
+            <Route exact path='/notes/'>
+                <a href="notes/a/1">as</a>
+             </Route>
+
+            <Route exact path='/notes/a/1'>
+                Algoritmi 1
             </Route>
 
-            <Route path='notes/a/1' >
-                5'5
+            <Route>
+                <DefaultContainer error='@JSX_NoteRouting01' />
             </Route>
         </Switch>
     )

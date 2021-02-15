@@ -1,6 +1,7 @@
 import React from 'react'
 import '../sass/main.sass'
 import { Layout } from 'antd'
+import { Switch, Route } from 'react-router-dom'
 import NoteRouter from '../components/NoteRouter'
 
 const { Content, Header, Sider, Footer } = Layout;
@@ -22,14 +23,14 @@ export default function ContentContainer() {
                     </div>
 
                     <div className='subject-note'>
-                        <a href='notes/a/1'>01. Argomento 1</a>
+                        <a href=''>01. Argomento 1</a>
                     </div>
 
                     <div className='subject-note'>
-                        <a href='./a/2'>02. Argomento 2</a>
+                        <a href=''>02. Argomento 2</a>
                     </div>
                     <div className='subject-note'>
-                        <a href='./a/3'>03. Argomento 3</a>
+                        <a href=''>03. Argomento 3</a>
                     </div>
                 </div>
 
@@ -39,11 +40,11 @@ export default function ContentContainer() {
                     </div>
 
                     <div className='subject-note'>
-                        <a href='/s/1'>01. Argomento 1</a>
+                        <a href=''>01. Argomento 1</a>
                     </div>
                     
                     <div className='subject-note'>
-                        <a href='/s/2'>02. Argomento 2</a>
+                        <a href=''>02. Argomento 2</a>
                     </div>
                 </div>
             </Sider>
