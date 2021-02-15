@@ -19,7 +19,7 @@ export default function ContentContainer() {
 
             var fixedNotes = [];
 
-            const response = await fetch('/');
+            const response = await fetch('/il-secondo-semestre/');
 
             const parser = document.createElement('html');
             parser.innerHTML = await response.text();

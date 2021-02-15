@@ -8,8 +8,7 @@ class Note {
     constructor() {
         this.state = {
             id: null,
-            subject: null,
-            url: '/'
+            subject: null
         }
     }
 }
