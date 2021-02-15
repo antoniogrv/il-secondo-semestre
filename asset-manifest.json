@@ -1,25 +1,23 @@
 {
   "files": {
-    "main.css": "/il-secondo-semestre/static/css/main.a507b8f4.chunk.css",
-    "main.js": "/il-secondo-semestre/static/js/main.d9a3b1dc.chunk.js",
-    "main.js.map": "/il-secondo-semestre/static/js/main.d9a3b1dc.chunk.js.map",
-    "runtime-main.js": "/il-secondo-semestre/static/js/runtime-main.e7208d9c.js",
-    "runtime-main.js.map": "/il-secondo-semestre/static/js/runtime-main.e7208d9c.js.map",
+    "main.css": "/il-secondo-semestre/static/css/main.e12aa7a0.chunk.css",
+    "main.js": "/il-secondo-semestre/static/js/main.38cc88f0.chunk.js",
+    "main.js.map": "/il-secondo-semestre/static/js/main.38cc88f0.chunk.js.map",
+    "runtime-main.js": "/il-secondo-semestre/static/js/runtime-main.c0f04ead.js",
+    "runtime-main.js.map": "/il-secondo-semestre/static/js/runtime-main.c0f04ead.js.map",
     "static/css/2.4e544775.chunk.css": "/il-secondo-semestre/static/css/2.4e544775.chunk.css",
-    "static/js/2.f0d5222b.chunk.js": "/il-secondo-semestre/static/js/2.f0d5222b.chunk.js",
-    "static/js/2.f0d5222b.chunk.js.map": "/il-secondo-semestre/static/js/2.f0d5222b.chunk.js.map",
-    "static/js/3.d8f4ee63.chunk.js": "/il-secondo-semestre/static/js/3.d8f4ee63.chunk.js",
-    "static/js/3.d8f4ee63.chunk.js.map": "/il-secondo-semestre/static/js/3.d8f4ee63.chunk.js.map",
+    "static/js/2.c4994443.chunk.js": "/il-secondo-semestre/static/js/2.c4994443.chunk.js",
+    "static/js/2.c4994443.chunk.js.map": "/il-secondo-semestre/static/js/2.c4994443.chunk.js.map",
     "index.html": "/il-secondo-semestre/index.html",
     "static/css/2.4e544775.chunk.css.map": "/il-secondo-semestre/static/css/2.4e544775.chunk.css.map",
-    "static/css/main.a507b8f4.chunk.css.map": "/il-secondo-semestre/static/css/main.a507b8f4.chunk.css.map",
-    "static/js/2.f0d5222b.chunk.js.LICENSE.txt": "/il-secondo-semestre/static/js/2.f0d5222b.chunk.js.LICENSE.txt"
+    "static/css/main.e12aa7a0.chunk.css.map": "/il-secondo-semestre/static/css/main.e12aa7a0.chunk.css.map",
+    "static/js/2.c4994443.chunk.js.LICENSE.txt": "/il-secondo-semestre/static/js/2.c4994443.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.e7208d9c.js",
+    "static/js/runtime-main.c0f04ead.js",
     "static/css/2.4e544775.chunk.css",
-    "static/js/2.f0d5222b.chunk.js",
-    "static/css/main.a507b8f4.chunk.css",
-    "static/js/main.d9a3b1dc.chunk.js"
+    "static/js/2.c4994443.chunk.js",
+    "static/css/main.e12aa7a0.chunk.css",
+    "static/js/main.38cc88f0.chunk.js"
   ]
 }
