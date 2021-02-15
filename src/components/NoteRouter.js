@@ -6,8 +6,6 @@ import '../sass/main.sass'
 export default function NoteRouter(props) {
     function createRoutes() {
         var routes = [];
-        
-        //console.log(props.notes.length);
 
         for(let i = 0; i < props.notes.length; i++) {
             const note = props.notes[i];
