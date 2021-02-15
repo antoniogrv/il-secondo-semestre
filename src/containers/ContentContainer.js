@@ -70,7 +70,6 @@ export default function ContentContainer() {
                         break;
     
                     case 'Algoritmi':
-                        console.log('alg');
                         a_fixedItems[a_fixedItems.length] = getTemplate(notes[i].id, 'Algoritmi');
                         break;
     
