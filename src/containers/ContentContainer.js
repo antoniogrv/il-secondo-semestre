@@ -48,7 +48,7 @@ export default function ContentContainer() {
             console.log('Fetching items... [# notes: ' + notes.length + ']');
 
             function getTemplate(id, subject) {
-                const link = '/notes/' + String(subject) + '/' + String(id);
+                const link = '/il-secondo-semestre/#/notes/' + String(subject) + '/' + String(id);
                 const key = String(subject) + '-' + String(id);
 
                 return (
@@ -97,7 +97,7 @@ export default function ContentContainer() {
         <Layout className='content-layout' hasSider>
             <Sider className='content-sider'>
                 <h1>
-                    <a href='/'>
+                    <a href='/il-secondo-semestre/'>
                         il-secondo-semestre
                     </a>
                 </h1>

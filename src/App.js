@@ -11,7 +11,7 @@ function App() {
             <Switch>
                 <Route exact path="/" component={LandingContainer} />
                     
-                <Route exact path="/notes" component={ContentContainer} />
+                <Route path="/notes" component={ContentContainer} />
 
                 <Route render={() => <FailureHandler error='@JSX_AppRouting' />} />
             </Switch>

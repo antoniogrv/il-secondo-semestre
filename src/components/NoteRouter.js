@@ -9,7 +9,7 @@ export default function NoteRouter(props) {
 
         for(let i = 0; i < props.notes.length; i++) {
             const note = props.notes[i];
-            const path = '/notes/' + note.subject + '/' + note.id;
+            const path = '/il-secondo-semestre/#/notes/' + note.subject + '/' + note.id;
             const fileName = note.subject + '-' + note.id;
 
             routes.push(
@@ -20,7 +20,7 @@ export default function NoteRouter(props) {
                     <div dangerouslySetInnerHTML={{ __html: require('../static/raw-notes/' + fileName + '.js') }}></div>
                 </Route>
             );
-            console.log('Creating route <' + path + '> to path <' + path + '>');
+            console.log('Creating route: ' + path);
         }
 
         routes.push(
