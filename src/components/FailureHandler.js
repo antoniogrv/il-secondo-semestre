@@ -1,7 +1,7 @@
 import React from 'react'
 import '../sass/main.sass'
 
-export default function DefaultContainer(props) {
+export default function FailureHandler(props) {
     return (
         <div className='default-page'>
             Questa pagina non esiste.<br />

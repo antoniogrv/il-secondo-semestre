@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Switch, Route } from 'react-router-dom'
-import DefaultContainer from '../containers/DefaultContainer'
+import FailureHandler from './FailureHandler'
 import '../sass/main.sass'
 
 export default function NoteRouter(props) {
@@ -25,7 +25,7 @@ export default function NoteRouter(props) {
 
         routes.push(
             <Route key='0'>
-                <DefaultContainer error='@JSX_NoteRouting_01' />
+                <FailureHandler error='@JSX_NotesRouting' />
             </Route>
         )
 
