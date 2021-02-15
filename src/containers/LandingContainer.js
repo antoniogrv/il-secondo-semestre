@@ -41,7 +41,7 @@ export default function LandingContainer() {
                     </p>
 
                     <p>
-                        <a href='/il-secondo-semestre/notes'>
+                        <a href='/il-secondo-semestre/#/notes'>
                             Notes
                         </a>
                     </p>
