@@ -12,6 +12,7 @@ html, body, #root
     width: 100%
     height: 100%
     transition: 0 !important
+    overflow: hidden !important
 
     a
         text-decoration: none
@@ -24,6 +25,12 @@ html, body, #root
     border: 0 !important
     width: 100%
     height: 100%
+
+.loader 
+    margin: 20px 0;
+    margin-bottom: 20px;
+    text-align: center;
+    border-radius: 4px;
 
 // Default Container
 
@@ -132,7 +139,6 @@ html, body, #root
 
     .content-sider
         background: $base-color
-        height: 100%
         color: white
 
         h1
@@ -159,9 +165,14 @@ html, body, #root
 
     .content-area
         background: white
+        overflow: auto
 
         .raw
-            padding: 20px
+            padding: 35px
+            height: 100%
+
+            div
+                padding-bottom: 30px
 
     .content-footer
         background: $header-n-footer-color

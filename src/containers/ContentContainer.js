@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import '../sass/main.sass'
-import { Layout, Result } from 'antd'
-import { Switch, Route } from 'react-router-dom'
+import { Layout, Spin } from 'antd'
 import NoteRouter from '../components/NoteRouter'
 
 const { Content, Header, Sider, Footer } = Layout;
@@ -161,7 +160,11 @@ export default function ContentContainer() {
                         { notes.length ? (
                             <NoteRouter notes={notes} />
                         ) : (
-                            'Loading'
+                            <div className='loader'>
+                                <Spin 
+                                    size='large'
+                                />
+                            </div>
                         )}
                     </div>
                 </Content>
