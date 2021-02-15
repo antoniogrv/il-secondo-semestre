@@ -7,15 +7,13 @@ import DefaultContainer from './containers/DefaultContainer'
 
 function App() {
     return (
-		<BrowserRouter>
-			<Switch>
-				<Route exact path="/" component={LandingContainer} />
-				
-				<Route path="/notes" component={ContentContainer} />
-
-				<Route render={() => <DefaultContainer error='JSX_AppRouting01' />}/>
-			</Switch>
-		</BrowserRouter>
+        <BrowserRouter>
+            <Switch>
+                <Route exact path="/" component={LandingContainer} />
+                    
+                <Route path="/notes" component={ContentContainer} />
+            </Switch>
+        </BrowserRouter>
     );
 }
 
