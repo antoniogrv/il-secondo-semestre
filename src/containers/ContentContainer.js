@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import '../sass/main.sass'
-import { Layout, Menu, Spin } from 'antd'
+import { Layout, Menu, Spin, Button } from 'antd'
 import NoteRouter from '../components/NoteRouter'
 
 const { Content, Header, Sider, Footer } = Layout;
