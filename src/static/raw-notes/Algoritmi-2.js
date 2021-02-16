@@ -1,1 +1,0 @@
-module.exports = '<div><em>Hello World! 2019</em></div>';

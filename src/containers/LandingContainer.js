@@ -37,7 +37,7 @@ export default function LandingContainer() {
                     <Button
                         type='primary'
                         className='action'
-                        href='/il-secondo-semestre/#/notes'
+                        href='/il-secondo-semestre/#/notes/Algoritmi/1'
                     >
                         Vai agli appunti
                     </Button>

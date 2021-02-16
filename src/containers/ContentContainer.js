@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import '../sass/main.sass'
-import { Layout, Spin } from 'antd'
+import { Layout, Menu, Spin } from 'antd'
 import NoteRouter from '../components/NoteRouter'
 
 const { Content, Header, Sider, Footer } = Layout;
+const { SubMenu } = Menu;
 
 export default function ContentContainer() {
     const [notes, setNotes] = useState({});
+
+    const [collapsed, setCollapsed] = useState(false);
 
     const [a_items, a_setItems] = useState([]); // Algoritmi
     const [s_items, s_setItems] = useState([]); // Statistica
@@ -51,10 +54,12 @@ export default function ContentContainer() {
                 const link = '/il-secondo-semestre/#/notes/' + String(subject) + '/' + String(id);
                 const key = String(subject) + '-' + String(id);
 
+                console.log(key);
+
                 return (
-                    <div key={key} className='subject-note'>
+                    <Menu.Item key={key}>
                         <a href={link}># Argomento {id}</a>
-                    </div>
+                    </Menu.Item>
                 );
             }
 
@@ -92,62 +97,72 @@ export default function ContentContainer() {
         fetchNotes();
     }, []);
 
+    const onCollapse = collapsed => {
+        console.log(collapsed ? true : false);
+        setCollapsed(collapsed ? true : false);
+      };
+
     return (
         <Layout className='content-layout' hasSider>
-            <Sider className='content-sider'>
-                <h1>
-                    <a href='/il-secondo-semestre/'>
-                        il-secondo-semestre
-                    </a>
-                </h1>
-
-                { a_items.length ? (
-                    <div className='subject'>
-                        <div className='subject-name'>
-                            Algoritmi
-                        </div>
-                        
-                        <div className='subject-note'>
+            <Sider 
+                theme='dark' 
+                className='content-sider' 
+                width={300}
+                collapsible
+                collapsed={collapsed}
+                onCollapse={onCollapse}
+            >
+                <Menu 
+                    mode='inline' 
+                    theme='dark'
+                    defaultOpenKeys={['alg']}
+                    defaultSelectedKeys={['Algoritmi-1']}
+                >
+                    { a_items.length ? (
+                        <SubMenu key='alg' title='Algoritmi'>
                             {a_items}
-                        </div>
-                    </div>
-                ) : ( <div /> )}
+                        </SubMenu>
+                    ) : ( <div /> )}
+                </Menu>
 
-                { s_items.length ? (
-                    <div className='subject'>
-                        <div className='subject-name'>
-                            Statistica
-                        </div>
-                        
-                        <div className='subject-note'>
-                            {s_items}
-                        </div>
-                    </div>
-                ) : ( <div /> )}
+                <Menu 
+                    mode='inline' 
+                    theme='dark'
+                >
+                    { s_items.length ? (
+                        <SubMenu key='stat' title='Statistica'>
+                            <Menu.Item>
+                                {s_items}
+                            </Menu.Item>
+                        </SubMenu>
+                    ) : ( <div /> )}
+                </Menu>
 
-                { w_items.length ? (
-                    <div className='subject'>
-                        <div className='subject-name'>
-                            Web
-                        </div>
-                        
-                        <div className='subject-note'>
-                            {w_items}
-                        </div>
-                    </div>
-                ) : ( <div /> )}
+                <Menu 
+                    mode='inline' 
+                    theme='dark'
+                >
+                    { r_items.length ? (
+                        <SubMenu key='reti' title='Reti'>
+                            <Menu.Item>
+                                {r_items}
+                            </Menu.Item>
+                        </SubMenu>
+                    ) : ( <div /> )}
+                </Menu>
 
-                { r_items.length ? (
-                    <div className='subject'>
-                        <div className='subject-name'>
-                            Reti
-                        </div>
-                        
-                        <div className='subject-note'>
-                            {r_items}
-                        </div>
-                    </div>
-                ) : ( <div /> )}
+                <Menu 
+                    mode='inline' 
+                    theme='dark'
+                >
+                    { w_items.length ? (
+                        <SubMenu key='web' title='Web'>
+                            <Menu.Item>
+                                {w_items}
+                            </Menu.Item>
+                        </SubMenu>
+                    ) : ( <div /> )}
+                </Menu>
 
             </Sider>
 
@@ -169,7 +184,9 @@ export default function ContentContainer() {
                 </Content>
 
                 <Footer className='content-footer'>
-
+                    <div style={{ float: 'right'}}>
+                        <a target="_blank" href="https://github.com/v1enna/il-secondo-semestre">GitHub</a>
+                    </div>
                 </Footer>
             </Layout>
         </Layout>
