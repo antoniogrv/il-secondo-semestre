@@ -1,177 +1,195 @@
-import React, { useState, useEffect } from 'react'
-import '../sass/main.sass'
-import { Layout, Spin } from 'antd'
-import NoteRouter from '../components/NoteRouter'
+import React, { useState, useEffect } from 'react';
+import '../sass/main.sass';
+import { CaretRightOutlined } from '@ant-design/icons';
+import { Layout, Menu, Spin } from 'antd';
+import NoteRouter from '../components/NoteRouter';
+import NoteItems from '../components/NoteItems';
 
 const { Content, Header, Sider, Footer } = Layout;
 
 export default function ContentContainer() {
-    const [notes, setNotes] = useState({});
+	const [notes, setNotes] = useState({});
 
-    const [a_items, a_setItems] = useState([]); // Algoritmi
-    const [s_items, s_setItems] = useState([]); // Statistica
-    const [r_items, r_setItems] = useState([]); // Reti
-    const [w_items, w_setItems] = useState([]); // Web
+	const [collapsed, setCollapsed] = useState(false);
 
-    useEffect(() => {
-        const fetchNotes = async () => {
-            console.log('Fetching notes...');
+	const [selectedSubjectName, setSelectedSubjectName] = useState('A');
+	const [selectedSubjectId, setSelectedSubjectId] = useState(1);
 
-            var fixedNotes = [];
+	const [a_items, a_setItems] = useState([]); // Algoritmi
+	const [s_items, s_setItems] = useState([]); // Statistica
+	const [r_items, r_setItems] = useState([]); // Reti
+	const [w_items, w_setItems] = useState([]); // Web
 
-            const response = await fetch('/il-secondo-semestre/');
+	const itemsProps = {
+		a_items: a_items,
+		s_items: s_items,
+		r_items: r_items,
+		w_items: w_items,
+	};
 
-            const parser = document.createElement('html');
-            parser.innerHTML = await response.text();
-            const scraped = parser.getElementsByTagName('Note');
+	useEffect(() => {
+		const fetchNotes = async () => {
+			var fixedNotes = [];
 
-            for(let i = 0; i < scraped.length; i++) {
-                let str = scraped[i].outerText;
+			const response = await fetch('/il-secondo-semestre/');
 
-                let id = str.split('-')[1].split('.')[0];
-                let subject = str.split('-')[0];
+			const parser = document.createElement('html');
+			parser.innerHTML = await response.text();
+			const scraped = parser.getElementsByTagName('Note');
 
-                fixedNotes[i] = {
-                    id: id,
-                    subject: subject
-                }
-            }
+			for (let i = 0; i < scraped.length; i++) {
+				let str = scraped[i].outerText;
 
-            setNotes(fixedNotes);
+				let id = str.split('-')[1].split('.')[0];
+				let subject = str.split('-')[0];
 
-            console.log('Note fetched, found ', + String(fixedNotes.length));
+				fixedNotes[i] = {
+					id: id,
+					subject: subject,
+				};
+			}
 
-            fetchSiderItems(fixedNotes);
-        }
+			setNotes(fixedNotes);
 
-        async function fetchSiderItems(notes) {
-            console.log('Fetching items... [# notes: ' + notes.length + ']');
+			fetchSiderItems(fixedNotes);
+		};
 
-            function getTemplate(id, subject) {
-                const link = '/il-secondo-semestre/#/notes/' + String(subject) + '/' + String(id);
-                const key = String(subject) + '-' + String(id);
+		async function fetchSiderItems(notes) {
+			function getTemplate(id, subject) {
+				const link =
+					'/il-secondo-semestre/#/notes/' +
+					String(subject) +
+					'/' +
+					String(id);
+				const key = String(subject)[0] + '-' + String(id);
 
-                return (
-                    <div key={key} className='subject-note'>
-                        <a href={link}># Argomento {id}</a>
-                    </div>
-                );
-            }
+				return (
+					<Menu.Item
+						icon={<CaretRightOutlined />}
+						key={key}
+						onClick={onClick}
+					>
+						<a href={link}># Argomento {id}</a>
+					</Menu.Item>
+				);
+			}
 
-            var a_fixedItems = [], 
-                s_fixedItems = [], 
-                r_fixedItems = [], 
-                w_fixedItems = [];
+			var a_fixedItems = [],
+				s_fixedItems = [],
+				r_fixedItems = [],
+				w_fixedItems = [];
 
-            for(let i = 0; i < notes.length; i++) {
-                switch(notes[i].subject) {
-                    case 'Reti':
-                        r_fixedItems[r_fixedItems.length] = getTemplate(notes[i].id, 'Reti');
-                        break;
-    
-                    case 'Algoritmi':
-                        a_fixedItems[a_fixedItems.length] = getTemplate(notes[i].id, 'Algoritmi');
-                        break;
-    
-                    case 'Statistica':
-                        s_fixedItems[s_fixedItems.length] = getTemplate(notes[i].id, 'Statistica');
-                        break;
-                                
-                    case 'Web':
-                        w_fixedItems[w_fixedItems.length] = getTemplate(notes[i].id, 'Web');
-                        break;
-                }
-            }
-            
-            a_setItems(a_fixedItems);
-            r_setItems(r_fixedItems);
-            s_setItems(s_fixedItems);
-            w_setItems(w_fixedItems);
-        }
+			for (let i = 0; i < notes.length; i++) {
+				switch (notes[i].subject) {
+					case 'Reti':
+						r_fixedItems[r_fixedItems.length] = getTemplate(
+							notes[i].id,
+							'Reti'
+						);
+						break;
 
-        fetchNotes();
-    }, []);
+					case 'Algoritmi':
+						a_fixedItems[a_fixedItems.length] = getTemplate(
+							notes[i].id,
+							'Algoritmi'
+						);
+						break;
 
-    return (
-        <Layout className='content-layout' hasSider>
-            <Sider className='content-sider'>
-                <h1>
-                    <a href='/il-secondo-semestre/'>
-                        il-secondo-semestre
-                    </a>
-                </h1>
+					case 'Statistica':
+						s_fixedItems[s_fixedItems.length] = getTemplate(
+							notes[i].id,
+							'Statistica'
+						);
+						break;
 
-                { a_items.length ? (
-                    <div className='subject'>
-                        <div className='subject-name'>
-                            Algoritmi
-                        </div>
-                        
-                        <div className='subject-note'>
-                            {a_items}
-                        </div>
-                    </div>
-                ) : ( <div /> )}
+					case 'Web':
+						w_fixedItems[w_fixedItems.length] = getTemplate(
+							notes[i].id,
+							'Web'
+						);
+						break;
+				}
+			}
 
-                { s_items.length ? (
-                    <div className='subject'>
-                        <div className='subject-name'>
-                            Statistica
-                        </div>
-                        
-                        <div className='subject-note'>
-                            {s_items}
-                        </div>
-                    </div>
-                ) : ( <div /> )}
+			a_setItems(a_fixedItems);
+			r_setItems(r_fixedItems);
+			s_setItems(s_fixedItems);
+			w_setItems(w_fixedItems);
+		}
 
-                { w_items.length ? (
-                    <div className='subject'>
-                        <div className='subject-name'>
-                            Web
-                        </div>
-                        
-                        <div className='subject-note'>
-                            {w_items}
-                        </div>
-                    </div>
-                ) : ( <div /> )}
+		fetchNotes();
+	}, []);
 
-                { r_items.length ? (
-                    <div className='subject'>
-                        <div className='subject-name'>
-                            Reti
-                        </div>
-                        
-                        <div className='subject-note'>
-                            {r_items}
-                        </div>
-                    </div>
-                ) : ( <div /> )}
+	const onCollapse = (collapsed) => {
+		setCollapsed(collapsed ? true : false);
+	};
 
-            </Sider>
+	const onClick = ({ item, key, keyPath, domEvenet }) => {
+		setSelectedSubjectName(key.split('-')[0]);
+		setSelectedSubjectId(key.split('-')[1]);
+	};
 
-            <Layout>
-                <Header className='content-header'></Header>
+	return (
+		<Layout className="content-layout" hasSider>
+			<Sider
+				theme="dark"
+				className="content-sider"
+				width={300}
+				collapsible
+				collapsed={collapsed}
+				onCollapse={onCollapse}
+			>
+				<NoteItems {...itemsProps} />
+			</Sider>
 
-                <Content className='content-area'>
-                    <div className='raw'>
-                        { notes.length ? (
-                            <NoteRouter notes={notes} />
-                        ) : (
-                            <div className='loader'>
-                                <Spin 
-                                    size='large'
-                                />
-                            </div>
-                        )}
-                    </div>
-                </Content>
+			<Layout>
+				<Header className="content-header">
+					<div>
+						<div
+							className="header-subject"
+							style={{ float: 'left' }}
+						>
+							<span className="subject-name">
+								{selectedSubjectName}
+							</span>
+							<span className="subject-id">
+								#{selectedSubjectId}
+							</span>
+						</div>
+						<div
+							className="header-title"
+							style={{ float: 'right' }}
+						>
+							<a href="/il-secondo-semestre/#/">
+								il-secondo-semestre
+							</a>
+						</div>
+					</div>
+				</Header>
 
-                <Footer className='content-footer'>
+				<Content className="content-area">
+					<div className="raw">
+						{notes.length ? (
+							<NoteRouter notes={notes} />
+						) : (
+							<div className="loader">
+								<Spin size="large" />
+							</div>
+						)}
+					</div>
+				</Content>
 
-                </Footer>
-            </Layout>
-        </Layout>
-    )
+				<Footer className="content-footer">
+					<div style={{ float: 'right' }}>
+						<a
+							target="_blank"
+							href="https://github.com/v1enna/il-secondo-semestre"
+						>
+							v1enna @ GitHub
+						</a>
+					</div>
+				</Footer>
+			</Layout>
+		</Layout>
+	);
 }
