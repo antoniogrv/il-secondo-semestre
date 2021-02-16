@@ -170,7 +170,8 @@ export default function ContentContainer() {
                 <Header className='content-header'>
                     <div>
                         <div className='header-subject' style={{ float: 'left' }}>
-                            Algoritmi - Argomento #1
+                            <span class='subject-name'>A</span>
+                            <span class='subject-id'>#1</span>
                         </div>
                         <div className='header-title' style={{ float: 'right'}}>
                             <a href='/il-secondo-semestre/#/'>il-secondo-semestre</a>
