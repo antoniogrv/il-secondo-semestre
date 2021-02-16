@@ -7,7 +7,7 @@ Il sito è disponibile su [il-secondo-semestre](https://v1enna.github.io/il-seco
 
 ## Tech-Stack
 
-L'applicativo è stato pensato ed elaborato per essere **totalmente statico** e client-side, e cioè funzionare su una qualsiasi macchina a prescindere dalla connessione alla rete o ad un hosting locale. Il sito non si collega ad alcun server e le pagine sono generate dinamicamente in funzione di determinate collezioni di file rinvenute nella directory del progetto.
+L'applicativo è stato pensato ed elaborato per essere **totalmente statico**, e cioè funzionare su una qualsiasi macchina a prescindere dalla connessione alla rete. Il sito non si collega ad alcun server e le pagine sono generate dinamicamente in funzione di determinate collezioni di file rinvenute nella directory del progetto.
 
 - La **logica** e le routine (routing, fetching e così via) sono sviluppate in [React](https://it.reactjs.org/) e [JavaScript](https://developer.mozilla.org/it/docs/Web/JavaScript). 
 - Il **markup** è in [JSX](https://facebook.github.io/jsx/). 
@@ -17,7 +17,7 @@ L'applicativo è stato pensato ed elaborato per essere **totalmente statico** e 
 
 ## Build & Deploy
 
-Per clonare la repository è possibile lanciare da CLI il comando `git clone https://github.com/v1enna/il-secondo-semestre.git` o scaricare [qui](https://github.com/v1enna/il-secondo-semestre/archive/main.zip) un archivio compresso. La repository ha due branch fissi: `main` e `gh-pages`.
+Per clonare la repository è possibile lanciare da terminale il comando `git clone https://github.com/v1enna/il-secondo-semestre.git` o scaricare [qui](https://github.com/v1enna/il-secondo-semestre/archive/main.zip) un archivio compresso. La repository ha due branch fissi: `main` e `gh-pages`.
 
 ### `branch: main`
 
@@ -37,6 +37,7 @@ Da questa logica ne consegue che per aggiungere un nuovo blocco di appunti è ne
 2. Aggiungere un file denominato `{subject}-{id}.js` in `static/raw-notes`
 
 E nient'altro. Le routine di React provvederanno a generare le pagine web necessarie alla visualizzazione del contenuto.
+
 **Nota bene:** il contenuto del file `{subject}-{id}.js` deve rispettare la seguente formattazione:
 
 `module.exports = '<div>Hello World! [... html markup ...]</div>';`
