@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/il-secondo-semestre/static/css/main.9c4c767d.chunk.css",
-    "main.js": "/il-secondo-semestre/static/js/main.c6efc101.chunk.js",
-    "main.js.map": "/il-secondo-semestre/static/js/main.c6efc101.chunk.js.map",
+    "main.css": "/il-secondo-semestre/static/css/main.cde6aba6.chunk.css",
+    "main.js": "/il-secondo-semestre/static/js/main.c5e9f414.chunk.js",
+    "main.js.map": "/il-secondo-semestre/static/js/main.c5e9f414.chunk.js.map",
     "runtime-main.js": "/il-secondo-semestre/static/js/runtime-main.c0f04ead.js",
     "runtime-main.js.map": "/il-secondo-semestre/static/js/runtime-main.c0f04ead.js.map",
     "static/css/2.4e544775.chunk.css": "/il-secondo-semestre/static/css/2.4e544775.chunk.css",
@@ -10,14 +10,14 @@
     "static/js/2.dc74ae71.chunk.js.map": "/il-secondo-semestre/static/js/2.dc74ae71.chunk.js.map",
     "index.html": "/il-secondo-semestre/index.html",
     "static/css/2.4e544775.chunk.css.map": "/il-secondo-semestre/static/css/2.4e544775.chunk.css.map",
-    "static/css/main.9c4c767d.chunk.css.map": "/il-secondo-semestre/static/css/main.9c4c767d.chunk.css.map",
+    "static/css/main.cde6aba6.chunk.css.map": "/il-secondo-semestre/static/css/main.cde6aba6.chunk.css.map",
     "static/js/2.dc74ae71.chunk.js.LICENSE.txt": "/il-secondo-semestre/static/js/2.dc74ae71.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.c0f04ead.js",
     "static/css/2.4e544775.chunk.css",
     "static/js/2.dc74ae71.chunk.js",
-    "static/css/main.9c4c767d.chunk.css",
-    "static/js/main.c6efc101.chunk.js"
+    "static/css/main.cde6aba6.chunk.css",
+    "static/js/main.c5e9f414.chunk.js"
   ]
 }
