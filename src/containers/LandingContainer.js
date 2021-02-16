@@ -4,15 +4,6 @@ import '../sass/main.sass'
 
 const { Content } = Layout;
 
-class Note {
-    constructor() {
-        this.state = {
-            id: null,
-            subject: null
-        }
-    }
-}
-
 export default function LandingContainer() {
     return (
         <div className="landing-page">

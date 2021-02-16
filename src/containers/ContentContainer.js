@@ -167,7 +167,16 @@ export default function ContentContainer() {
             </Sider>
 
             <Layout>
-                <Header className='content-header'></Header>
+                <Header className='content-header'>
+                    <div>
+                        <div className='header-subject' style={{ float: 'left' }}>
+                            Algoritmi - Argomento #1
+                        </div>
+                        <div className='header-title' style={{ float: 'right'}}>
+                            <a href='/il-secondo-semestre/#/'>il-secondo-semestre</a>
+                        </div>
+                    </div>
+                </Header>
 
                 <Content className='content-area'>
                     <div className='raw'>
@@ -185,7 +194,7 @@ export default function ContentContainer() {
 
                 <Footer className='content-footer'>
                     <div style={{ float: 'right'}}>
-                        <a target="_blank" href="https://github.com/v1enna/il-secondo-semestre">GitHub</a>
+                        <a target="_blank" href="https://github.com/v1enna/il-secondo-semestre">v1enna @ GitHub</a>
                     </div>
                 </Footer>
             </Layout>
