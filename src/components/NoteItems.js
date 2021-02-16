@@ -1,5 +1,11 @@
 import React from 'react';
 import { Menu } from 'antd';
+import {
+	LineChartOutlined,
+	UsbOutlined,
+	ShareAltOutlined,
+	FunctionOutlined,
+} from '@ant-design/icons';
 
 const { SubMenu } = Menu;
 
@@ -9,10 +15,14 @@ export default function NoteItems(props) {
 			mode="inline"
 			theme="dark"
 			defaultOpenKeys={['alg']}
-			defaultSelectedKeys={['Algoritmi-1']}
+			defaultSelectedKeys={['A-1']}
 		>
 			{props.a_items.length ? (
-				<SubMenu key="alg" title="Algoritmi">
+				<SubMenu
+					icon={<FunctionOutlined style={{ fontSize: 15 }} />}
+					key="alg"
+					title="Algoritmi"
+				>
 					{props.a_items}
 				</SubMenu>
 			) : (
@@ -20,7 +30,11 @@ export default function NoteItems(props) {
 			)}
 
 			{props.s_items.length ? (
-				<SubMenu key="stat" title="Statistica">
+				<SubMenu
+					icon={<LineChartOutlined style={{ fontSize: 15 }} />}
+					key="stat"
+					title="Statistica"
+				>
 					{props.s_items}
 				</SubMenu>
 			) : (
@@ -28,7 +42,11 @@ export default function NoteItems(props) {
 			)}
 
 			{props.r_items.length ? (
-				<SubMenu key="reti" title="Reti">
+				<SubMenu
+					icon={<UsbOutlined style={{ fontSize: 15 }} />}
+					key="reti"
+					title="Reti"
+				>
 					{props.r_items}
 				</SubMenu>
 			) : (
@@ -36,7 +54,11 @@ export default function NoteItems(props) {
 			)}
 
 			{props.w_items.length ? (
-				<SubMenu key="web" title="Web">
+				<SubMenu
+					icon={<ShareAltOutlined style={{ fontSize: 15 }} />}
+					key="web"
+					title="Web"
+				>
 					{props.w_items}
 				</SubMenu>
 			) : (

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../sass/main.sass';
+import { CaretRightOutlined } from '@ant-design/icons';
 import { Layout, Menu, Spin } from 'antd';
 import NoteRouter from '../components/NoteRouter';
 import NoteItems from '../components/NoteItems';
@@ -63,7 +64,11 @@ export default function ContentContainer() {
 				const key = String(subject)[0] + '-' + String(id);
 
 				return (
-					<Menu.Item key={key} onClick={onClick}>
+					<Menu.Item
+						icon={<CaretRightOutlined />}
+						key={key}
+						onClick={onClick}
+					>
 						<a href={link}># Argomento {id}</a>
 					</Menu.Item>
 				);
