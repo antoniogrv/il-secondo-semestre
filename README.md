@@ -48,8 +48,8 @@ Per minimizzare il peso dell'HTML è consigliato usare [HTML Minifier](https://w
 
 
 ## To-do
-- [X] Design responsive per Android e iPhone.
-- [ ] *(Opzionale)* Migrare da JavaScript a [TypeScript](https://www.typescriptlang.org/).
+- [X] Design responsive per Android e iPhone
+- [ ] *(Opzionale)* Migrare da JavaScript a [TypeScript](https://www.typescriptlang.org/)
 
 
 ## Failure Handling
