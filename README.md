@@ -17,7 +17,7 @@ L'applicativo è stato pensato ed elaborato per essere **totalmente statico** e 
 
 ## Build & Deploy
 
-Per clonare la repository è possibile lanciare da CLI il comando `git clone https://github.com/v1enna/il-secondo-semestre.git` o scaricare [qui](https://github.com/v1enna/il-secondo-semestre/archive/main.zip) un archivio compresso. La repository ha due branch: *main* e *gh-pages*.
+Per clonare la repository è possibile lanciare da CLI il comando `git clone https://github.com/v1enna/il-secondo-semestre.git` o scaricare [qui](https://github.com/v1enna/il-secondo-semestre/archive/main.zip) un archivio compresso. La repository ha due branch fissi: `main` e `gh-pages`.
 
 ### `branch: main`
 
@@ -37,14 +37,19 @@ Da questa logica ne consegue che per aggiungere un nuovo blocco di appunti è ne
 2. Aggiungere un file denominato `{subject}-{id}.js` in `static/raw-notes`
 
 E nient'altro. Le routine di React provvederanno a generare le pagine web necessarie alla visualizzazione del contenuto.
+**Nota bene:** il contenuto del file `{subject}-{id}.js` deve rispettare la seguente formattazione:
+
+#### `module.exports = '<div>Hello World! [... html markup ...]</div>';`
+
+Per minimizzare il peso dell'HTML è consigliato usare [HTML Minifier](https://www.willpeavy.com/tools/minifier/). Per eventuali demo, invece, si suggerisce [WebFX](https://www.webfx.com/tools/lorem-ipsum-generator/).
 
 
 ## To-do
 - [ ] Build server-side usando Node e [FS](https://nodejs.org/api/fs.html)
 - [ ] Migrare da JavaScript a [TypeScript](https://www.typescriptlang.org/)
 - [ ] Design responsive per Android e iPhone
-- [ ] Hub di configurazione per la produzione (eventuale `config.json` con `debug_mode`)
-- [ ] `<NotesContext.Provider>` per eliminare la ridondanza fra `fetchNotes()` e `fetchSiderItems()`
+- [ ] Eventuale `<NotesContext.Provider>` per eliminare la ridondanza fra `fetchNotes()` e `fetchSiderItems()`
+- [ ] Ristrutturare la struttura dati relativa alle `notes`
 
 
 ## Failure Handling
