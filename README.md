@@ -39,17 +39,16 @@ Da questa logica ne consegue che per aggiungere un nuovo blocco di appunti è ne
 E nient'altro. Le routine di React provvederanno a generare le pagine web necessarie alla visualizzazione del contenuto.
 **Nota bene:** il contenuto del file `{subject}-{id}.js` deve rispettare la seguente formattazione:
 
-#### `module.exports = '<div>Hello World! [... html markup ...]</div>';`
+`module.exports = '<div>Hello World! [... html markup ...]</div>';`
 
 Per minimizzare il peso dell'HTML è consigliato usare [HTML Minifier](https://www.willpeavy.com/tools/minifier/). Per eventuali demo, invece, si suggerisce [WebFX](https://www.webfx.com/tools/lorem-ipsum-generator/).
 
 
 ## To-do
-- [ ] Build server-side usando Node e [FS](https://nodejs.org/api/fs.html)
-- [ ] Migrare da JavaScript a [TypeScript](https://www.typescriptlang.org/)
-- [ ] Design responsive per Android e iPhone
-- [ ] Eventuale `<NotesContext.Provider>` per eliminare la ridondanza fra `fetchNotes()` e `fetchSiderItems()`
-- [ ] Ristrutturare la struttura dati relativa alle `notes`
+- [ ] Migrare da JavaScript a [TypeScript](https://www.typescriptlang.org/).
+- [X] Design responsive per Android e iPhone.
+- [ ] Implementare `<NotesContext.Provider>` per eliminare la ridondanza fra `fetchNotes()` e `fetchSiderItems()`.
+- [ ] Creare una struttura dati relativa per memorizzare le `notes` a prescindere dalla route attuale.
 
 
 ## Failure Handling
