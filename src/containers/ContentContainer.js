@@ -112,6 +112,7 @@ export default function ContentContainer() {
                 collapsed={collapsed}
                 onCollapse={onCollapse}
             >
+
                 <Menu 
                     mode='inline' 
                     theme='dark'
@@ -123,43 +124,22 @@ export default function ContentContainer() {
                             {a_items}
                         </SubMenu>
                     ) : ( <div /> )}
-                </Menu>
 
-                <Menu 
-                    mode='inline' 
-                    theme='dark'
-                >
                     { s_items.length ? (
                         <SubMenu key='stat' title='Statistica'>
-                            <Menu.Item>
-                                {s_items}
-                            </Menu.Item>
+                            {s_items}
                         </SubMenu>
                     ) : ( <div /> )}
-                </Menu>
 
-                <Menu 
-                    mode='inline' 
-                    theme='dark'
-                >
                     { r_items.length ? (
                         <SubMenu key='reti' title='Reti'>
-                            <Menu.Item>
-                                {r_items}
-                            </Menu.Item>
+                            {r_items}
                         </SubMenu>
                     ) : ( <div /> )}
-                </Menu>
 
-                <Menu 
-                    mode='inline' 
-                    theme='dark'
-                >
                     { w_items.length ? (
                         <SubMenu key='web' title='Web'>
-                            <Menu.Item>
-                                {w_items}
-                            </Menu.Item>
+                            {w_items}
                         </SubMenu>
                     ) : ( <div /> )}
                 </Menu>
