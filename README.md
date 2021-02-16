@@ -45,10 +45,9 @@ Per minimizzare il peso dell'HTML è consigliato usare [HTML Minifier](https://w
 
 
 ## To-do
-- [ ] Migrare da JavaScript a [TypeScript](https://www.typescriptlang.org/).
 - [X] Design responsive per Android e iPhone.
+- [ ] Migrare da JavaScript a [TypeScript](https://www.typescriptlang.org/).
 - [ ] Implementare `<NotesContext.Provider>` per eliminare la ridondanza fra `fetchNotes()` e `fetchSiderItems()`.
-- [ ] Creare una struttura dati relativa per memorizzare le `notes` a prescindere dalla route attuale.
 
 
 ## Failure Handling
