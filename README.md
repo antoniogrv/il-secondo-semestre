@@ -2,7 +2,9 @@
 
 Questa webapp è stata sviluppata al fine di **collezionare in modo ordinato degli appunti personali** relativi, in particolare, alle lezioni del secondo semestre del secondo anno del corso di laurea in Informatica dell'Università di Salerno. Le informazioni contenute sulle pagine del sito non sono da ritenersi affidabili, valide o approvate dai docenti. L'applicativo è stato creato per puro scopo didattico e per intrattenimento.
 
-Il sito è disponibile su [il-secondo-semestre](https://v1enna.github.io/il-secondo-semestre/).
+Il sito è disponibile su [il-secondo-semestre](https://v1enna.github.io/il-secondo-semestre/). 
+
+E' stato sviluppato per Google Chrome e potrebbe non funzionare correttamente su altri browser.
 
 
 ## Tech-Stack
@@ -28,7 +30,7 @@ Per clonare la repository è possibile lanciare da terminale il comando `git clo
 `gh-pages` è il branch di deploy e contiene la build effettiva dell'applicativo, e cioè la sequenza di file statici (markup HTML, script JS, CSS precompilato da SASS, immagini e così via) necessari alla corretta visualizzazione delle pagine web. Il branch non viene aggiornato manualmente: la pubblicazione della versione pubblica è affidata a `npm run deploy` che spingerà sul branch la build corretta in riferimento all'attuale versione locale. Ciò significa che i contenuti di `main` e `gh-pages` possono differire senza problemi.
 
 
-### Routine
+## Routine
 
 L'applicativo fondamentalmente si occupa di generare in modo automatico delle pagine web statiche in base agli appunti disponibili. In particolare, gli appunti disponibili sono elencati in `index.html` e sono indicati in tag `<Note>`. Il file dunque conterrà, oltre al markup della build, anche una lista non necessariamente ordinata di tag `<Note>`, i quali faranno riferimento ad un preciso file JavaScript in `static/raw-notes`. Come suggerisce il nome, in `raw-notes` sono depositati gli appunti in sé, e cioè il testo grezzo formattato in HTML ed esportato in JSX. 
 
