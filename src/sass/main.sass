@@ -1,8 +1,9 @@
 @import "~antd/dist/antd.css";
 
-$base-color: #FF8181
-$link-color: #9B2146
-$link-hover-color: #B4375D
+$base-color: #242424
+$link-color: #5db1ff
+$title-color: #5db1ff
+$link-hover-color: #97cdff
 $header-n-footer-color: #F7F7F7
 
 html, body, #root
@@ -66,11 +67,20 @@ html, body, #root
     .landing-page-content 
         background: $base-color
 
+        .action
+            font-size: 20px
+            margin-top: 15px
+            margin-bottom: 20px
+            width: 325px
+            height: 50px
+            padding: 7.5px
+            color: white !important
+
         h1 
             font-size: 55px
             font-weight: 900
             margin: 0
-            color: white
+            color: $title-color
 
         .tagline
             padding: 0
@@ -82,54 +92,11 @@ html, body, #root
             em
                 font-weight: 100
 
+            strong
+                font-weight: 500
+
         .banter
             font-size: 14.5px
-
-            strong
-                font-weight: 600
-
-        .buttons
-            display: flex
-            justify-content: center
-            margin-bottom: 30px
-            margin-top: 10px
-
-            a:hover
-                filter: brigthness(300%)
-
-                .subject-button
-                    background: rgba(168,20,67,1);
-                    background: -moz-linear-gradient(left, rgba(168,20,67,1) 0%, rgba(181,23,73,1) 100%);
-                    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(168,20,67,1)), color-stop(100%, rgba(181,23,73,1)));
-                    background: -webkit-linear-gradient(left, rgba(168,20,67,1) 0%, rgba(181,23,73,1) 100%);
-                    background: -o-linear-gradient(left, rgba(168,20,67,1) 0%, rgba(181,23,73,1) 100%);
-                    background: -ms-linear-gradient(left, rgba(168,20,67,1) 0%, rgba(181,23,73,1) 100%);
-                    background: linear-gradient(to right, rgba(168,20,67,1) 0%, rgba(181,23,73,1) 100%);
-                    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a81443', endColorstr='#b51749', GradientType=1 );
-
-            a
-                color: white !important
-                text-decoration: none
-
-                .subject-button
-                    width: 155px
-                    height: 42.5px
-                    font-weight: 600
-                    font-size: 17.5px
-                    display: flex
-                    justify-content: center
-                    border-radius: 3px
-                    align-items: center
-                    background: rgba(185,29,76,1);
-                    background: -moz-linear-gradient(left, rgba(185,29,76,1) 0%, rgba(207,48,96,1) 100%)
-                    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(185,29,76,1)), color-stop(100%, rgba(207,48,96,1)))
-                    background: -webkit-linear-gradient(left, rgba(185,29,76,1) 0%, rgba(207,48,96,1) 100%)
-                    background: -o-linear-gradient(left, rgba(185,29,76,1) 0%, rgba(207,48,96,1) 100%)
-                    background: -ms-linear-gradient(left, rgba(185,29,76,1) 0%, rgba(207,48,96,1) 100%)
-                    background: linear-gradient(to right, rgba(185,29,76,1) 0%, rgba(207,48,96,1) 100%)
-                    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b91d4c', endColorstr='#cf3060', GradientType=1 )
-                    margin-right: 10px
-
                 
 // Content Page
 
