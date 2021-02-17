@@ -2,9 +2,7 @@
 
 Questa webapp è stata sviluppata al fine di **collezionare in modo ordinato degli appunti personali** relativi, in particolare, alle lezioni del secondo semestre del secondo anno del corso di laurea in Informatica dell'Università di Salerno. Le informazioni contenute sulle pagine del sito non sono da ritenersi affidabili, valide o approvate dai docenti. L'applicativo è stato creato per puro scopo didattico e per intrattenimento.
 
-Il sito è disponibile su [il-secondo-semestre](https://v1enna.github.io/il-secondo-semestre/). 
-
-E' stato sviluppato per Google Chrome e potrebbe non funzionare correttamente su altri browser.
+Il sito è disponibile a [il-secondo-semestre](https://v1enna.github.io/il-secondo-semestre/) ed è stato sviluppato per Google Chrome, motivo per cui potrebbe non funzionare correttamente su altri browser.
 
 
 ## Tech-Stack
