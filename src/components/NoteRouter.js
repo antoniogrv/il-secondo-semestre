@@ -39,7 +39,7 @@ export default function NoteRouter(props) {
 				{createRoutes()}
 
 				<Route
-					render={() => <FailureHandler error="@JSX_AppRouting3" />}
+					render={() => <FailureHandler error="@JSX_NotesRouting" />}
 				/>
 			</Switch>
 		</HashRouter>
