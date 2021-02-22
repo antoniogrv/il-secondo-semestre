@@ -1,55 +1,55 @@
 # il-secondo-semestre
 
-Questa webapp è stata sviluppata al fine di **collezionare in modo ordinato degli appunti personali** relativi, in particolare, alle lezioni del secondo semestre del secondo anno del corso di laurea in Informatica dell'Università di Salerno. Le informazioni contenute sulle pagine del sito non sono da ritenersi affidabili, valide o approvate dai docenti. L'applicativo è stato creato per puro scopo didattico e per intrattenimento.
+This webapp (_the-second-semester_) has been developed in order to **collect in an orderly way personal notes** related, in particular, to the lessons of the second semester of the second year of the degree course in Computer Science at the University of Salerno. The information contained on the pages of the site are not to be considered reliable, valid or approved by the teachers. The application has been created purely for educational purposes and entertainment.
 
-Il sito è disponibile a [il-secondo-semestre](https://v1enna.github.io/il-secondo-semestre/) ed è stato sviluppato per Google Chrome, motivo per cui potrebbe non funzionare correttamente su altri browser.
+The site is available at [the-second-semester](https://v1enna.github.io/il-secondo-semestre/) and has been developed for Google Chrome, which is why it may not work properly on other browsers.
 
 
 ## Tech-Stack
 
-L'applicativo è stato pensato ed elaborato per essere **totalmente statico**, e cioè funzionare su una qualsiasi macchina a prescindere dalla connessione alla rete. Il sito non si collega ad alcun server e le pagine sono generate dinamicamente in funzione di determinate collezioni di file rinvenute nella directory del progetto.
+The application has been designed and developed to be **totally static**, meaning it will run on any machine regardless of network connection. The site does not connect to any server and pages are generated dynamically according to certain collections of files found in the project directory.
 
-- La **logica** e le routine (routing, fetching e così via) sono sviluppate in [React](https://it.reactjs.org/) e [JavaScript](https://developer.mozilla.org/it/docs/Web/JavaScript). 
-- Il **markup** è in [JSX](https://facebook.github.io/jsx/). 
-- I **layout** e la grafica sono in [SASS](https://sass-lang.com/) e [Ant](https://ant.design/).
-- Le **dipendenze** sono gestite tramite [Node](https://nodejs.org/it/) e [npm/npx](https://www.npmjs.com/).
+- The **logic** and routines (routing, fetching and so on) are developed in [React](https://it.reactjs.org/) and [JavaScript](https://developer.mozilla.org/it/docs/Web/JavaScript). 
+- The **markup** is in [JSX](https://facebook.github.io/jsx/). 
+- The **layouts** and graphics are in [SASS](https://sass-lang.com/) and [Ant](https://ant.design/).
+- The **dependencies** are handled via [Node](https://nodejs.org/it/) and [npm/npx](https://www.npmjs.com/).
 
 
 ## Build & Deploy
 
-Per clonare la repository è possibile lanciare da terminale il comando `git clone https://github.com/v1enna/il-secondo-semestre.git` o scaricare [qui](https://github.com/v1enna/il-secondo-semestre/archive/main.zip) un archivio compresso. La repository ha due branch fissi: `main` e `gh-pages`.
+To clone the repository you can run the terminal command `git clone https://github.com/v1enna/il-secondo-semestre.git` or download [here](https://github.com/v1enna/il-secondo-semestre/archive/main.zip) a compressed archive. The repository has two fixed branches: `main` and `gh-pages`.
 
 ### `branch: main`
 
-`main` è il master-branch e non corrisponde necessariamente alla versione pubblica che, invece, è disponibile a *gh-pages*. Il branch principale contiene la versione di produzione dell'applicativo che ancora fa affidamento a `npm` per essere avviata. Una volta clonata la repository, è possibile lanciare `npm install` e `npm start` per visualizzare l'attuale versione di produzione. Il primo comando, `npm install`, scaricherà in `/node_modules` le dipendenze elencate in `package.json`. Non vengono usate librerie particolarmente pesanti, e l'installazione dovrebbe durare poco. Invece, `npm start` permetterà di visualizzare su `localhost:3000` il routing specificato in `App.js`. 
+`main` is the master-branch and does not necessarily correspond to the public version which, instead, is available at *gh-pages*. The main branch contains the production version of the application that still relies on `npm` to get started. Once the repository is cloned, you can run `npm install` and `npm start` to view the current production version. The first command, `npm install`, will download into `/node_modules` the dependencies listed in `package.json`. No particularly heavy libraries are used, and the installation should take a short time. Instead, `npm start` will allow `localhost:3000` to display the routing specified in `App.js`. 
 
 ### `branch: gh-pages`
 
-`gh-pages` è il branch di deploy e contiene la build effettiva dell'applicativo, e cioè la sequenza di file statici (markup HTML, script JS, CSS precompilato da SASS, immagini e così via) necessari alla corretta visualizzazione delle pagine web. Il branch non viene aggiornato manualmente: la pubblicazione della versione pubblica è affidata a `npm run deploy` che spingerà sul branch la build corretta in riferimento all'attuale versione locale. Ciò significa che i contenuti di `main` e `gh-pages` possono differire senza problemi.
+`gh-pages` is the deployment branch and contains the actual build of the application, i.e. the sequence of static files (HTML markup, JS scripts, CSS precompiled by SASS, images, and so on) needed to properly display the web pages. The branch is not manually updated: the publication of the public version is done by `npm run deploy` which will push the correct build to the branch with reference to the current local version. This means that the contents of `main` and `gh-pages` can differ without problems.
 
 
 ## Routine
 
-L'applicativo fondamentalmente si occupa di generare in modo automatico delle pagine web statiche in base agli appunti disponibili. In particolare, gli appunti disponibili sono elencati in `index.html` e sono indicati in tag `<Note>`. Il file dunque conterrà, oltre al markup della build, anche una lista non necessariamente ordinata di tag `<Note>`, i quali faranno riferimento ad un preciso file JavaScript in `static/raw-notes`. Come suggerisce il nome, in `raw-notes` sono depositati gli appunti in sé, e cioè il testo grezzo formattato in HTML ed esportato in JSX. 
+The application basically takes care of automatically generating static web pages based on the available notes. In particular, the available notes are listed in `index.html` and are indicated in `<Note>` tags. The file will therefore contain, in addition to the build markup, also a not necessarily ordered list of `<Note>` tags, which will refer to a specific JavaScript file in `static/raw-notes`. As the name suggests, in `raw-notes` are stored the notes themselves, i.e. the raw text formatted in HTML and exported to JSX. 
 
-Da questa logica ne consegue che per aggiungere un nuovo blocco di appunti è necessario:
-1. Aggiungere un tag `<Note> {subject}-{id}.js </Note>` in `index.html`
-2. Aggiungere un file denominato `{subject}-{id}.js` in `static/raw-notes`
+From this logic it follows that to add a new clipboard you need to:
+1. Add a `<Note> {subject}-{id}.js </Note>` tag in `index.html`.
+2. Add a file named `{subject}-{id}.js` in `static/raw-notes`.
 
-E nient'altro. Le routine di React provvederanno a generare le pagine web necessarie alla visualizzazione del contenuto.
+And nothing else. React's routines will generate the web pages needed to display the content.
 
-**Nota bene:** il contenuto del file `{subject}-{id}.js` deve rispettare la seguente formattazione:
+**Please note:** the content of the file `{subject}-{id}.js` must adhere to the following formatting:
 
 `module.exports = '<div>Hello World! [... html markup ...]</div>';`
 
-Per minimizzare il peso dell'HTML è consigliato usare [HTML Minifier](https://www.willpeavy.com/tools/minifier/). Per eventuali demo, invece, si suggerisce [WebFX](https://www.webfx.com/tools/lorem-ipsum-generator/).
+To generate the markup needed to display the notes, it is suggested to use [HTML Minifier](https://www.willpeavy.com/tools/minifier/). For testing out the layout, [WebFX](https://www.webfx.com/tools/lorem-ipsum-generator/) is the tool to go.
 
 
 ## To-do
-- [X] Design responsive per Android e iPhone
-- [ ] *(Opzionale)* Migrare da JavaScript a [TypeScript](https://www.typescriptlang.org/)
+- [X] Responsive Design
+- [ ] *(Optional)* Migrate from JavaScript to [TypeScript](https://www.typescriptlang.org/)
 
 
 ## Failure Handling
-- **@JSX_AppRouting** > Impossibile trovare la pagina richiesta
-- **@JSX_NotesRouting** > Impossibile trovare il blocco di appunti specificato in `notes/{subject}/{id}`
+- **@JSX_AppRouting** > Can't find the requested page
+- **@JSX_NotesRouting** > Can't find the requested note in `notes/{subject}/{id}`
