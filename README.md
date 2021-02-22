@@ -2,6 +2,8 @@
 
 This webapp (_the-second-semester_) has been developed in order to **collect and display personal notes in an orderly fashion** related, in particular, to the lessons of the second semester of the second year of the degree course in Computer Science at the University of Salerno, Italy. The information contained on the pages of the site are not to be considered reliable, valid or approved by the teachers. The application has been created purely for educational purposes and entertainment.
 
+![Preview](https://i.ibb.co/tZQJRXm/f43407ea6af616a28d90bc256f35209f.png)
+
 The site is available at [the-second-semester](https://v1enna.github.io/il-secondo-semestre/) and has been developed for Google Chrome, which is why it may not work properly on other browsers. The public website only shows a demo with random Lorem Ipsum paragraphs.
 
 
